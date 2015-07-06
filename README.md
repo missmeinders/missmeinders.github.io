@@ -1,35 +1,45 @@
 
 user stories:
 
-1 declare gameState and initialize player 1 (active, complete)
+requires even # of cards.
 
-2 if complete player win or lose -  initialize player 2 (active, complete)
+connect image with div / square
 
-3 if complete player win or lose or tie with player 1
+add eventListener to individual squares
 
-4 determine winner by tallying winner of 3 games
+upon start, cards should be face down at the beginning of gameState.
 
-5 connect image with div / square
 
-6 tell the game that when 2 img tags match, to remove the squares and add a point
+player will play 2 turns (flip 2 card images) --> if match then gameScore
+else no gameScore and cards flip back.
 
-7 tell game to hide img if it is not matched by another square
 
-8 gameState (player turn)
+once cards are matched, they are removed from the board
 
-9 declare winner, loser or tie
+
+
+declare gameState and initialize player 1 (active, complete)
+
+if complete player win or lose -  initialize player 2 (active, complete)
+
+if complete player win or lose or tie with player 1
+
+determine winner by tallying winner of 3 games
+
+declare winner, loser or tie
+
 <br>
 
 suggested variables:
 
-var gameState = 
+var gameState =
 
-var gamePlayer1 = 
+var gamePlayer1 =
 
-var gamePlayer2 = 
+var gamePlayer2 =
 
-var game1Score = 
+var game1Score =
 
-var game2Score = 
+var game2Score =
 
-var game3Score = 
+var game3Score =
