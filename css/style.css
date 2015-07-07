@@ -1,6 +1,24 @@
+#board {
+  height: 620px;
+  width: 620px;
+  margin: 0 auto;
+}
 
-  body{
-    padding: 0;
-    margin: 0;
-  }
+h1 {
+  color: #F0F0F0;
+  font-family: Helvetica;
+  text-align: center;
+  padding-top: 15px;
+}
 
+.square {
+  width: 135px;
+  height: 135px;
+  background-color: pink;
+  border-color: black;
+  border: auto;
+}
+
+body {
+  background-color: black;
+}

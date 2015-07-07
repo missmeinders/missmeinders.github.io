@@ -1,9 +1,37 @@
 
 user stories:
 
-requires even # of cards.
+cellClick = console.log("id");
+make 2 selections, store both selection in a container type thing
 
-connect image with div / square
+cellClick = console.log("id");
+if match = score 1
+else do nothing.
+(adding event listner, getElmentByClass(square).onclick
+)
+
+_____________
+
+
+user enter name
+declare user (1 of 2)
+
+onGameLoad = populate table cells wiht img. via Math.random()
+
+user should click cell
+-cards should be face down
+-cards should be even
+-if user click cell 1, it filps and image appears
+-if user clicks cell 2, if img matches then score point, else flip 1 and 2 back
+
+
+
+_____________________
+
+
+gameScore =
+
+
 
 add eventListener to individual squares
 
