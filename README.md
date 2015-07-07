@@ -1,14 +1,18 @@
 
 user stories:
 
-cellClick = console.log("id");
+cellClick = console.log("class");
 make 2 selections, store both selection in a container type thing
 
-cellClick = console.log("id");
+cellClick = console.log("class");
 if match = score 1
 else do nothing.
 (adding event listner, getElmentByClass(square).onclick
 )
+
+
+var square = document.getElementsByClassSquare("square");
+div class to make the picture show up and appear
 
 _____________
 
