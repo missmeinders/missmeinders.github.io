@@ -1,7 +1,18 @@
 
 user stories:
 
-cellClick = console.log("class");
+day 1:
+create for loop and then console.log cell id's X
+
+then add the event listner (onclick) X
+
+cellClick = console.log("class"); X
+
+day2:
+
+hide image
+make image reappaer onclick for a max of 2 clicks
+
 make 2 selections, store both selection in a container type thing
 
 cellClick = console.log("class");
@@ -10,8 +21,6 @@ else do nothing.
 (adding event listner, getElmentByClass(square).onclick
 )
 
-
-var square = document.getElementsByClassSquare("square");
 div class to make the picture show up and appear
 
 _____________
