@@ -23,6 +23,14 @@ else do nothing.
 
 div class to make the picture show up and appear
 
+day 3:
+user story
+
+# 1 make all images apper
+
+# 2 when 2 images are viewed, if they are different, they disappear.
+
+# 3 randomize the images onload.
 _____________
 
 

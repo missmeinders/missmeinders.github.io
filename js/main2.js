@@ -34,17 +34,15 @@ for (var i = 0; i < square.length; i++) {
 
 }
 
-// var boardState = (reset) {
-//   onclick.fadeout if 0 || <3
-// }
+//Remember to set your condition outside the loop!
+var count = 0
+var squareId = [".daydream", ".grumpy", ".happy", ".messy", ".slow", ".cheerful", ".bump", ".cool", ".wrong", ".topsyturvey", ".strong", ".missbossy "]
 
-// var boardState = (active) {
-//   onclick.fadein > 2
-// }
+var squareId = function() {
+  while (count < squareId.length) {
+    //
+    console.log("squareId");
+  }
+};
 
-// create a function
-// boardState
-// if 2 clicks then keep cards visible
-// img fade in
-//   if 0 clicks then reset
-//img fade out
+squareId();
