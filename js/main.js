@@ -1,27 +1,14 @@
-console.log('activate framework!');
+console.log("new main working");
 
+var $squares = $(".square");
 
-var square = document.getElementsByClassName("square");
-console.log(square);
+$squares.on("click", function() {
+  console.log("#" + this.id);
+  addClassToSquare("daydream", "#" + this.id);
+});
 
-
-var board = [
-  [null, null, null, null, null, null],
-  [null, null, null, null, null, null],
-  [null, null, null, null, null, null],
-  [null, null, null, null, null, null]
-];
-
-for (var i = 0; i < square.length; i++) {
-  square[i].addEventListener("click", function() {
-    console.log(this.id);
-  })
-
+var addClassToSquare = function(className, squareId) {
+  // var $squareNumber1 = $("#1");
+  // $squareNumber1.addClass("daydream");
+  $(squareId).addClass(className);
 }
-
-// activateClass.onclick = function() {
-
-//   document.querySelector(".activate").onclick = function() {
-//     console.log('');
-//   }
-// };

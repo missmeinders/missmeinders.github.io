@@ -17,8 +17,15 @@ h1 {
   background-color: pink;
   border-color: black;
   border: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 body {
   background-color: black;
+}
+
+.daydream {
+  background-image: url("http://www.weirdspace.dk/RogerHargreaves/Graphics/MrDaydream.gif");
 }
