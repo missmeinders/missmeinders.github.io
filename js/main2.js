@@ -36,4 +36,16 @@ for (var i = 0; i < square.length; i++) {
 
 // if counter = 1 (call match function, else)
 
-//push data from images into array
+
+// var addClassToSquare = function(className, squareId) {
+//   // var $squareNumber1 = $("#1");
+//   // $squareNumber1.addClass("daydream");
+//   $(squareId).addClass(className);
+// }
+// var count = 0
+// var squareId = function() {
+//   while (count < this.id.length) {
+//     $(squareId).addClass(className);
+//     console.log("squareId");
+//   }
+// };
