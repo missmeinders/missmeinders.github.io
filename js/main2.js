@@ -33,7 +33,6 @@ for (var i = 0; i < square.length; i++) {
   })
 
 }
-
 // if counter = 1 (call match function, else)
 
 
