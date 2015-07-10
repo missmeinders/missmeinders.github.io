@@ -1,65 +1,55 @@
 console.log("new main working");
 
-var $squares = $(".square");
-// $squares is jquery for for the class square
+var firstGuess, squareId, board, timer, score, $squares;
 
+function init() {
+  firstGuess = null;
+  squareId = ["daydream", "grumpy", "happy", "messy", "slow", "cheerful", "bump", "cool", "wrong", "topsyturvey", "strong", "missbossy", "daydream2", "grumpy2", "happy2", "messy2", "slow2", "cheerful2", "bump2", "cool2", "wrong2", "topsyturvey2", "strong2", "missbossy2"];
+  board = $("body #board");
+  $squares = $(".square");
 
-//square id is an array that contains all the the subclass squares
-var squareId = ["daydream", "grumpy", "happy", "messy", "slow", "cheerful", "bump", "cool", "wrong", "topsyturvey", "strong", "missbossy", "daydream2", "grumpy2", "happy2", "messy2", "slow2", "cheerful2", "bump2", "cool2", "wrong2", "topsyturvey2", "strong2", "missbossy2"];
+  //on click: X
+  //this.id in the guessed array??????
+  guessedArray.push(squareId[parseInt(this.id)]);
+  // if (guessedArray.this.id || timer) return;
 
-//arrayCathcer is cathing my arrays which go into my arrayMatch function
-var arrayCatcher = [];
+  //YES:
+  //FIRSTGUESS??????
+  //-show img - is this the firstGuess ??????
 
-// the board is my container for my header, table and squares (everything  minus score button)
-var board = $("body #board");
-
-// counter counts how many clicks take palce on the squares
-var counter = 0;
-
-//DO NOT UNDERSTAND - This is the rehide function. I called it in my arrayMatch function.
-$("#hide").click(function() {
-  $(squareId).hide();
-});
-
-//DO NOT UNDERSTAND - This is the score function.
-
-$('#score-button').click(function() {
-  // add 2 points
-});
-
-//arrayMatch function - this function incorporates the counter and connects the classes from
-//arrayCathcher. Ideally if a match is made, then the score is recorded and the cards dissolve.
-//if there is no match then the cards "rehide" and the counter resets.
-//DOES NOT WORK: the rehide function, the counter, the no match, and the hide square.
-function arrayMatch() {
-  if (counter === 0) {
-    return;
-  } else if (arrayCatcher[0] === arrayCatcher[1]) {
-    console.log("arrayMatch working");
-    console.log("Match made!");
-    return counter = 0;
-    //call the score and dissolve functions
-  } else {
-    console.log('NO match!');
-    return counter = 0;
-    //call the rehide function
-    hide(squareId);
-  }
-}
-
-//this for loop takes squareID and triggers the arrayCatcher if the counter is less
-//than 2.
-for (var i = 0; i < squareId.length; i++) {
-  board.on("click", function() {
-    if (counter < 2) {
-      arrayCatcher.push(squareId[parseInt(this.id)]);
-      // arrayCatcher.push(element you click);
-      counter++;
-      arrayMatch();
-    } else {
-      arrayMatch();
-    }
+  $squares.on("click", function() {
+    console.log("#" + this.id);
+    $(this).addClass(squareId[parseInt(this.id)]);
+    // arrayCatcher.push(squareId[parseInt(this.id)]);
+    console.log(squareId[parseInt(this.id)]);
   });
+
+  //FIRST GUESS-store this.id into first guess????
+  this.id = firstGuess;
+
+
+  //NO: X
+  //determine if match
+  if ($('#' + firstGuess).hasClass(squareId[parseInt(this.id)]))
+
+  //YES:
+  //-include score and update display (not now)
+
+  //- fade both imgs: X
+    $(squareId).fadeOut(1000);
+
+  //- push both this.id into guessedArray: X
+  guessedArray.push(squareId[parseInt(this.id)]);
+  firstGuess = null;
+
+
+  //NO: X
+  var timer = setTimeout(function) {
+      $('#' + firstGuess).removeClass(squareId[parseInt(firstGuess)]);
+      firstGuess = null;
+      timer = null;
+    },
+    1000);
 }
 
 //this function shuffles the array SquareId.
@@ -87,10 +77,4 @@ function shuffle(array) {
 shuffle(squareId);
 console.log(squareId);
 
-//this puts squareId into the arrayCatcher onclick.
-$squares.on("click", function() {
-  console.log("#" + this.id);
-  $(this).addClass(squareId[parseInt(this.id)]);
-  arrayCatcher.push(squareId[parseInt(this.id)]);
-  console.log(squareId[parseInt(this.id)]);
-});
+init();
