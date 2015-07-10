@@ -59,27 +59,29 @@ function init() {
       }
     }
 
+// console.log(matchedDivIds);
 
-    // console.log(matchedDivIds);
+// // this counter must be set to 2, to limit clicks in the guessedArray
+// if (counter === 2) {
+//   counter = 0;
 
-    //this counter must be set to 2, to limit clicks in the guessedArray
-    // if (counter === 2) {
-    //   counter = 0;
+//   //this if statement tells the guessedArrays to match
+//   if (guessedArray[0] === guessedArray[1]) {
+//     console.log("match");
+//   } else {
 
-    //   //this if statement tells the guessedArrays to match
-    //   if (guessedArray[0] === guessedArray[1]) {
-    //     console.log("match");
-    //   } else {
+//     //this else, in the if statement tells us that the cards don't match
+//     console.log("no match");
+//     guessedArray = [];
+//     $('#' + matchedDivIds[0]).removeClass(squareId[parseInt(matchedDivIds[0])]);
+//     $('#' + matchedDivIds[1]).removeClass(squareId[parseInt(matchedDivIds[1])]);
+//     // $squares.eq().fadeOut()
+//   }
+// }
+// console.log(squareId[parseInt(this.id)]);
 
-    //     //this else, in the if statement tells us that the cards don't match
-    //     console.log("no match");
-    //     guessedArray = [];
-    //     $('#' + matchedDivIds[0]).removeClass(squareId[parseInt(matchedDivIds[0])]);
-    //     $('#' + matchedDivIds[1]).removeClass(squareId[parseInt(matchedDivIds[1])]);
-    //     // $squares.eq().fadeOut()
-    //   }
-    // }
-    // console.log(squareId[parseInt(this.id)]);
+
+
   });
 
 
