@@ -138,5 +138,5 @@ function shuffle(array) {
 
 //this function callback shuffles the array squareId.
 init();
-// shuffle(squareId);
+shuffle(squareId);
 // console.log(squareId);

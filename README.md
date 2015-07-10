@@ -11,6 +11,7 @@ X 3 - print out the cell click
 day 2:
 
 X 1 - hide image
+
 X 2 - make image reappaer onclick for a max of 2 clicks
 X 3 - make 2 selections, store selections in a container
 
