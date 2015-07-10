@@ -1,55 +1,118 @@
 console.log("new main working");
 
-var firstGuess, squareId, board, timer, score, $squares;
+var firstGuess, squareId, board, timer, score, $squares, guessedArray, counter;
 
 function init() {
   firstGuess = null;
-  squareId = ["daydream", "grumpy", "happy", "messy", "slow", "cheerful", "bump", "cool", "wrong", "topsyturvey", "strong", "missbossy", "daydream2", "grumpy2", "happy2", "messy2", "slow2", "cheerful2", "bump2", "cool2", "wrong2", "topsyturvey2", "strong2", "missbossy2"];
+  counter = 0;
+  squareId = ["daydream", "grumpy", "happy", "messy", "slow", "cheerful", "bump", "cool", "wrong", "topsyturvey", "strong", "missbossy", "daydream", "grumpy", "happy", "messy", "slow", "cheerful", "bump", "cool", "wrong", "topsyturvey", "strong", "missbossy"];
   board = $("body #board");
   $squares = $(".square");
+  guessedArray = [];
 
-  //on click: X
-  //this.id in the guessed array??????
-  guessedArray.push(squareId[parseInt(this.id)]);
-  // if (guessedArray.this.id || timer) return;
+  var matchedDivIds = [];
+
+  var first, second;
 
   //YES:
-  //FIRSTGUESS??????
-  //-show img - is this the firstGuess ??????
 
-  $squares.on("click", function() {
-    console.log("#" + this.id);
+  //this is jquery, and activates the class squares on click
+  $squares.on("click", function(event) {
+
+    //this is the counter function and prompts my counter
+    counter++;
+
+    //this add's class squareId to this (where you are)
     $(this).addClass(squareId[parseInt(this.id)]);
-    // arrayCatcher.push(squareId[parseInt(this.id)]);
-    console.log(squareId[parseInt(this.id)]);
+
+    //this pushes squareId into the gussedArray container
+    guessedArray.push(squareId[parseInt(this.id)]);
+    console.log(guessedArray);
+
+    matchedDivIds.push(event.target.id);
+
+    if (counter === 1) {
+      first = this.id;
+
+      // counter = 2
+    } else {
+      second = this.id;
+
+      // reset counter
+      counter = 0;
+
+      //this if statement tells the guessedArrays to match
+      if (guessedArray[0] === guessedArray[1]) {
+        console.log("match");
+        guessedArray = [];
+        first = null;
+        second = null;
+      } else {
+
+        //this else, in the if statement tells us that the cards don't match
+        console.log("no match");
+        console.log(first, second);
+        guessedArray = [];
+        $('#' + first).removeClass(squareId[first]);
+        $('#' + second).removeClass(squareId[second]);
+        // $squares.eq().fadeOut()
+      }
+
+    }
+
+
+
+    // console.log(matchedDivIds);
+
+    //this counter must be set to 2, to limit clicks in the guessedArray
+    // if (counter === 2) {
+    //   counter = 0;
+
+    //   //this if statement tells the guessedArrays to match
+    //   if (guessedArray[0] === guessedArray[1]) {
+    //     console.log("match");
+    //   } else {
+
+    //     //this else, in the if statement tells us that the cards don't match
+    //     console.log("no match");
+    //     guessedArray = [];
+    //     $('#' + matchedDivIds[0]).removeClass(squareId[parseInt(matchedDivIds[0])]);
+    //     $('#' + matchedDivIds[1]).removeClass(squareId[parseInt(matchedDivIds[1])]);
+    //     // $squares.eq().fadeOut()
+    //   }
+    // }
+    // console.log(squareId[parseInt(this.id)]);
   });
 
-  //FIRST GUESS-store this.id into first guess????
-  this.id = firstGuess;
 
+  $(".squareId").click(function() {
+    $("#0").fadeOut(1000);
+    $("#2").fadeOut(1000);
+
+  });
+
+
+
+  //FIRST GUESS-store this.id into first guess????
+  // this.id = firstGuess;
 
   //NO: X
   //determine if match
   if ($('#' + firstGuess).hasClass(squareId[parseInt(this.id)]))
 
-  //YES:
-  //-include score and update display (not now)
+  //YES:)
 
   //- fade both imgs: X
     $(squareId).fadeOut(1000);
 
   //- push both this.id into guessedArray: X
-  guessedArray.push(squareId[parseInt(this.id)]);
-  firstGuess = null;
-
 
   //NO: X
-  var timer = setTimeout(function) {
-      $('#' + firstGuess).removeClass(squareId[parseInt(firstGuess)]);
-      firstGuess = null;
-      timer = null;
-    },
-    1000);
+  var timer = setTimeout(function() {
+    $('#' + firstGuess).removeClass(squareId[parseInt(firstGuess)]);
+    firstGuess = null;
+    timer = null;
+  }, 1000);
 }
 
 //this function shuffles the array SquareId.
@@ -74,7 +137,6 @@ function shuffle(array) {
 }
 
 //this function callback shuffles the array squareId.
-shuffle(squareId);
-console.log(squareId);
-
 init();
+// shuffle(squareId);
+// console.log(squareId);
