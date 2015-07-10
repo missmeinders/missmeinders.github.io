@@ -1,6 +1,6 @@
 console.log("new main working");
 
-var firstGuess, squareId, board, timer, score, $squares, guessedArray, counter;
+var firstGuess, squareId, board, timer, score, $squares, guessedArray, counter, matchedDivIds, first, second;
 
 function init() {
   firstGuess = null;
@@ -10,10 +10,8 @@ function init() {
   $squares = $(".square");
   guessedArray = [];
   matchedDivIds = [];
+  first, second;
 
-  var first, second;
-
-  //YES:
 
   //this is jquery, and activates the class squares on click
   $squares.on("click", function(event) {
@@ -28,8 +26,10 @@ function init() {
     guessedArray.push(squareId[parseInt(this.id)]);
     console.log(guessedArray);
 
+    //pushes matchedDivIds into a relative id
     matchedDivIds.push(event.target.id);
 
+    //makes first counter absolutely equal to 1, and abolutely equal to 2.
     if (counter === 1) {
       first = this.id;
 
@@ -59,32 +59,34 @@ function init() {
       }
     }
 
-// console.log(matchedDivIds);
+    //this stuff doesn't work, but one day i'll figure it out! trying to
+    //get the squares to fade out, but I actually want placeholder squares (black)
+    //to take the place of the matched items.
 
-// // this counter must be set to 2, to limit clicks in the guessedArray
-// if (counter === 2) {
-//   counter = 0;
+    // // this counter must be set to 2, to limit clicks in the guessedArray
+    // if (counter === 2) {
+    //   counter = 0;
 
-//   //this if statement tells the guessedArrays to match
-//   if (guessedArray[0] === guessedArray[1]) {
-//     console.log("match");
-//   } else {
+    //   //this if statement tells the guessedArrays to match
+    //   if (guessedArray[0] === guessedArray[1]) {
+    //     console.log("match");
+    //   } else {
 
-//     //this else, in the if statement tells us that the cards don't match
-//     console.log("no match");
-//     guessedArray = [];
-//     $('#' + matchedDivIds[0]).removeClass(squareId[parseInt(matchedDivIds[0])]);
-//     $('#' + matchedDivIds[1]).removeClass(squareId[parseInt(matchedDivIds[1])]);
-//     // $squares.eq().fadeOut()
-//   }
-// }
-// console.log(squareId[parseInt(this.id)]);
+    //     //this else, in the if statement tells us that the cards don't match
+    //     console.log("no match");
+    //     guessedArray = [];
+    //     $('#' + matchedDivIds[0]).removeClass(squareId[parseInt(matchedDivIds[0])]);
+    //     $('#' + matchedDivIds[1]).removeClass(squareId[parseInt(matchedDivIds[1])]);
+    //     // $squares.eq().fadeOut()
+    //   }
+    // }
+    // console.log(squareId[parseInt(this.id)]);
 
 
 
   });
 
-
+  //fade the squareId
   $(".squareId").click(function() {
     $("#0").fadeOut(1000);
     $("#2").fadeOut(1000);
@@ -107,7 +109,8 @@ function init() {
 
   //- push both this.id into guessedArray: X
 
-  //NO: X
+  //NO:
+  //this removes class from firstGuess
   var timer = setTimeout(function() {
     $('#' + firstGuess).removeClass(squareId[parseInt(firstGuess)]);
     firstGuess = null;
