@@ -1,5 +1,8 @@
 game name: miniMemory
 
+game url:
+https://www.bitballoon.com/sites/psychologist-cecil-16754
+
 instructions: Click on the squaures, and try to match the characters!
 
 
