@@ -9,8 +9,7 @@ function init() {
   board = $("body #board");
   $squares = $(".square");
   guessedArray = [];
-
-  var matchedDivIds = [];
+  matchedDivIds = [];
 
   var first, second;
 
@@ -53,13 +52,12 @@ function init() {
         console.log("no match");
         console.log(first, second);
         guessedArray = [];
-        $('#' + first).removeClass(squareId[first]);
-        $('#' + second).removeClass(squareId[second]);
-        // $squares.eq().fadeOut()
+        setTimeout(function() {
+          $('#' + first).removeClass(squareId[first]);
+          $('#' + second).removeClass(squareId[second]);
+        }, 900);
       }
-
     }
-
 
 
     // console.log(matchedDivIds);
